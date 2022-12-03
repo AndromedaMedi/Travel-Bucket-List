@@ -8,7 +8,9 @@ import repositories.city_repository as city_repository
 
 
 
-user_repository.delete_all()
+# user_repository.delete_all()
+# country_repository.delete_all()
+# city_repository.delete_all()
 
 user1 = User("Chloe Adams", 26)
 user_repository.save(user1)
