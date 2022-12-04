@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Bucket List</title>
+</head>
+<body>
+
+    <header>
+        <h1>Chloe's Travel Bucket List</h1>
+        <h3>Where to next...?</h3>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/home">Home</a>
+                </li>
+                <li>
+                    <a href="/add_destination">Add Destination</a>
+                </li>
+                <li>
+                    <a href="/delete_destination">Delete Destination</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="destinations">
+
+        <section id="countries_visited">
+            {% block countries_visited %}
+                
+            {% endblock %}
+        </section>
+
+        <section id="countries_to_visit">
+            {% block countries_to_visit %}
+                
+            {% endblock %}
+        </section>
+
+        <section id="cities_to_visit">
+            {% block cities_to_visit %}
+                
+            {% endblock %}
+        </section>
+
+        <section id="add_country">
+            {% block add_country %}
+                
+            {% endblock %}
+        </section>
+
+        <section id="add_city">
+            {% block add_city %}
+                
+            {% endblock %}
+        </section>
+    </main>
+
+    <footer>
+        <h3>Travel Bucket List</h3>
+        <h4>All the destinations you have visited and want to visit in one place.</h4>
+    </footer>
+
+</body>
+</html>

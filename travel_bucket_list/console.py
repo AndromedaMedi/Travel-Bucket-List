@@ -8,14 +8,14 @@ import repositories.city_repository as city_repository
 
 
 
-# user_repository.delete_all()
-# country_repository.delete_all()
-# city_repository.delete_all()
+user_repository.delete_all()
+country_repository.delete_all()
+city_repository.delete_all()
 
 user1 = User("Chloe Adams", 26)
 user_repository.save(user1)
 
-# user_repository.select_all()
+user_repository.select_all()
 
 country1 = Country("Greece", user1, True)
 country_repository.save(country1)
@@ -26,7 +26,7 @@ country_repository.save(country3)
 country4 = Country("France", user1, True)
 country_repository.save(country4)
 
-# country_repository.select_all()
+country_repository.select_all()
 
 city1 = City("Athens", country1, user1, False)
 city_repository.save(city1)
@@ -45,6 +45,6 @@ city_repository.save(city7)
 city8 = City("Leon", country4, user1, False)
 city_repository.save(city8)
 
-# city_repository.select_all()
+city_repository.select_all()
 
 
