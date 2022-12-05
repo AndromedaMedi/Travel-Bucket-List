@@ -11,5 +11,10 @@
         </li>
         {% endfor %}
     </ul>
+    <form action="/country/{{country.id}}/delete" method="post">
+        <p>
+            <input type="submit" value="Remove Country">
+        </p>
+    </form>
 
 {% endblock %}

@@ -6,5 +6,10 @@
     <h2>{{ city.name }}</h2>
     <image></image>
     <text></text>
+    <form action="/city/{{city.id}}/delete" method="post">
+        <p>
+            <input type="submit" value="Remove City">
+        </p>
+    </form>
 
 {% endblock %}

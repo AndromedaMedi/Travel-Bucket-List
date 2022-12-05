@@ -17,7 +17,12 @@ def home():
     countries_visited = country_repository.select_all_visited()
     countries_to_visit = country_repository.select_all_to_visit()
     cities_to_visit = city_repository.select_all_to_visit()
-    return render_template("index.html", user=user, countries_visited = countries_visited, countries_to_visit=countries_to_visit, cities_to_visit=cities_to_visit)
+    countries = country_repository.select_all()
+    return render_template("index.html", user=user, 
+        countries_visited = countries_visited, 
+        countries_to_visit=countries_to_visit, 
+        cities_to_visit=cities_to_visit, 
+        countries=countries)
 
 # SHOW
 # GET '/country/<id>
@@ -62,8 +67,19 @@ def add_city():
     user_id = request.form['user_id']
     visited = request.form['visited']
 
-    country = country_repository.select(country_id)
     user = user_repository.select(user_id)
+    country = country_repository.select(country_id)
     city = City(name, country, user, visited)
     city_repository.save(city)
     return redirect('/')
+
+@destination_blueprint.route("/country/<country_id>/delete", methods=['POST'])
+def remove_country(country_id):
+    country_repository.delete(country_id)
+    return redirect('/')
+
+@destination_blueprint.route("/city/<city_id>/delete", methods=['POST'])
+def remove_city(city_id):
+    deleted_city = city_repository.delete(city_id)
+    return redirect(f'/country/{deleted_city.country.id}')
+

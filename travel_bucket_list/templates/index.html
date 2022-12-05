@@ -96,12 +96,24 @@
                     <input type="text" id="name" name="name">
                 </div>
                 <div>
+                    <label for="country">Country:</label>
+                    <select id="country" name="country_id">
+                        {% for country in countries %}
+                        <option value="{{country.id}}">
+                            {{ country.name }}
+                        </option>
+                            
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
                     <label for="visited">Already been?</label>
                     <input type="checkbox" id="visited" name="visited">
                 </div>
                 <div>
                     <button type="add">Add Destination</button>
                 </div>
+                <input type="hidden" value="{{ user.id }}" name="user_id">
             </form>
             <!-- {% endblock %} -->
         </section>

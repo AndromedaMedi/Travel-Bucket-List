@@ -73,9 +73,16 @@ def delete_all():
     run_sql(sql)
 
 def delete(id):
-    sql = "DELETE FROM cities WHERE id = %s"
+    sql = "DELETE FROM cities WHERE id = %s RETURNING *"
     values = [id]
-    run_sql(sql, values)
+    result = run_sql(sql, values)[0]
+
+    if result:
+        country = country_repository.select(result['country_id'])
+        user = user_reposiotry.select(result['user_id'])
+        deleted_city = City(result['name'], country, user, result['visited'], result['id'])
+
+    return deleted_city
 
 def update(city):
     sql = "UPDATE cities SET (name, country_id, user_id, visited) = (%s, %s, %s, %s) WHERE id = %s"
