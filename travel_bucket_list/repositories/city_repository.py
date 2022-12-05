@@ -23,6 +23,40 @@ def select_all():
         cities.append(city)
     return cities 
 
+def select_all_visited():
+    cities_visited = []
+    sql = "SELECT * FROM cities WHERE visited = true"
+    results = run_sql(sql)
+    for row in results:
+        country = country_repository.select(row['country_id'])
+        user = user_reposiotry.select(row['user_id'])
+        city = City(row['name'], country, user, row['visited'], row['id'])
+        cities_visited.append(city)
+    return cities_visited
+
+def select_all_visited_from_country(country_id):
+    cities_visited = []
+    sql = "SELECT * FROM cities WHERE visited = true and country_id = %s" 
+    values = [country_id]
+    results = run_sql(sql, values)
+    for row in results:
+        country = country_repository.select(row['country_id'])
+        user = user_reposiotry.select(row['user_id'])
+        city = City(row['name'], country, user, row['visited'], row['id'])
+        cities_visited.append(city)
+    return cities_visited
+
+def select_all_to_visit():
+    cities_to_visit = []
+    sql = "SELECT * FROM cities WHERE visited = false"
+    results = run_sql(sql)
+    for row in results:
+        country = country_repository.select(row['country_id'])
+        user = user_reposiotry.select(row['user_id'])
+        city = City(row['name'], country, user, row['visited'], row['id'])
+        cities_to_visit.append(city)
+    return cities_to_visit
+
 def select(id):
     city = None
     sql = "SELECT * FROM cities WHERE id = %s"

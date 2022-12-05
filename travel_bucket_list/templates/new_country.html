@@ -1,0 +1,18 @@
+{% extends 'index' %}
+
+{% block add_country %}
+    <form action="/add" methods="POST">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="visited">Visited</label>
+            <input type="checkbox" id="visited" name="visited">
+        </div>
+        <div>
+            <button type="add">Add Destination</button>
+        </div>
+    </form>
+    
+{% endblock %}

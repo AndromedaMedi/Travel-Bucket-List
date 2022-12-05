@@ -9,12 +9,12 @@
 <body>
 
     <header>
-        <h1>Chloe's Travel Bucket List</h1>
+        <h1>{{ user.name }}'s Travel Bucket List</h1>
         <h3>Where to next...?</h3>
         <nav>
             <ul>
                 <li>
-                    <a href="/home">Home</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
                     <a href="/add_destination">Add Destination</a>
@@ -29,39 +29,87 @@
     <main class="destinations">
 
         <section id="countries_visited">
-            {% block countries_visited %}
-                
-            {% endblock %}
+            <h3>Countries Visited</h3>
+            <!-- {% block countries_visited %} -->
+            <ul>
+                {% for country in countries_visited %}
+                <li>
+                    <a href="/country/{{ country.id }}">{{ country.name }}</a> 
+                </li>
+                {% endfor %}
+            </ul>
+            <!-- {% endblock %} -->
         </section>
 
         <section id="countries_to_visit">
-            {% block countries_to_visit %}
-                
-            {% endblock %}
+            <h3>Countries To Visit</h3>
+            <!-- {% block countries_to_visit %} -->
+            <ul>
+                {% for country in countries_to_visit %}
+                <li>
+                    <a>{{ country.name }}</a> 
+                </li>
+                {% endfor %}
+            </ul>
+            <!-- {% endblock %} -->
         </section>
 
         <section id="cities_to_visit">
-            {% block cities_to_visit %}
-                
-            {% endblock %}
+            <h3>Cities To Visit</h3>
+            <!-- {% block cities_to_visit %} -->
+            <ul>
+                {% for city in cities_to_visit %}
+                <li>
+                    <a>{{ city.name }}</a> 
+                </li>
+                {% endfor %}
+            </ul>
+            <!-- {% endblock %} -->
         </section>
 
         <section id="add_country">
-            {% block add_country %}
-                
-            {% endblock %}
+            <h3>Add Country</h3>
+            <!-- {% block add_country %} -->
+            <form action="/add_country" method="POST">
+                <input type="hidden" value="{{ user.id }}" name="user_id">
+                <div>
+                    <label for="name">Country Name:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div>
+                    <label for="visited">Already been?</label>
+                    <input type="checkbox" id="visited" name="visited">
+                </div>
+                <div>
+                    <button type="add">Add Destination</button>
+                </div>
+            </form>
+            <!-- {% endblock %} -->
         </section>
 
         <section id="add_city">
-            {% block add_city %}
-                
-            {% endblock %}
+            <h3>Add City</h3>
+            <!-- {% block add_city %} -->
+            <form action="/add_city" method="POST">
+                <div>
+                    <label for="name">City Name:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div>
+                    <label for="visited">Already been?</label>
+                    <input type="checkbox" id="visited" name="visited">
+                </div>
+                <div>
+                    <button type="add">Add Destination</button>
+                </div>
+            </form>
+            <!-- {% endblock %} -->
         </section>
     </main>
 
     <footer>
         <h3>Travel Bucket List</h3>
-        <h4>All the destinations you have visited and want to visit in one place.</h4>
+        <h4>All the destinations you have already visited and want to visit in one place.</h4>
     </footer>
 
 </body>
