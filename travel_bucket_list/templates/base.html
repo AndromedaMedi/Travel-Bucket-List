@@ -4,27 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Travel Bucket List</title>
 </head>
 <body>
 
     <header>
-        <h1>{{ user.name }}'s Travel Bucket List</h1>
-        <h3>Where to next...?</h3>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/add_destination">Add Destination</a>
-                </li>
-                <li>
-                    <a href="/delete_destination">Delete Destination</a>
-                </li>
-            </ul>
-        </nav>
+
+        <div class="heading">
+            <h1>{{ user.name }}'s Travel Bucket List</h1>
+            <h3>Where to next...?</h3>
+        </div>
+
+        <div class="head-nav"></div>
+            <nav>
+                <ul>
+                    <li class="nav-link">
+                        <a href="/"><img <link>  Home</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/">Add Destination</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/delete_destination">Delete Destination</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
+    <hr>
     <main>
 
         {% block content %}
@@ -32,6 +40,7 @@
         {% endblock %}
 
     </main>
+    <hr>
     <footer>
         <h3>Travel Bucket List</h3>
         <h4>All the destinations you have visited and want to visit in one place.</h4>

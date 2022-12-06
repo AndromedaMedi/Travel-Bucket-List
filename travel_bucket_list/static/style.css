@@ -1,0 +1,120 @@
+body {
+    background: url('/static/images/background6.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 70;
+    list-style-type: none;
+    padding: 10px;
+    margin: 0px;
+}
+
+.destinations {
+    display: flex;
+
+    justify-content: space-around;
+    text-decoration: none;
+}
+
+
+body>footer {
+    color: indianred;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    color:indianred;
+    align-items: flex-end;
+}
+
+
+h3 {
+    color: indianred;
+}
+
+
+header nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+
+}
+
+nav a {
+    color: indianred;
+    text-decoration: none;
+    list-style: none;
+    list-style-type: none;
+}
+nav a:hover {
+    color: darkslategray;
+}
+
+
+.nav-link {
+    list-style: none;
+}
+
+body > main > div > section > ul > li {
+    list-style: none;
+}
+body main div section ul li a {
+    text-decoration: none;
+    color: #1d3232;
+}
+
+
+.countries_visited {
+    text-decoration: none;
+    background-color: #cd5c5c50;
+    padding: 5px;
+    list-style: none;
+}
+body main 
+
+.countries_to_visit {
+    background-color: #cd5c5c50;
+    padding: 5px;
+    list-style: none;
+    align-content: center;
+    align-items: center;
+}
+
+.cities_to_visit {
+    background-color: #cd5c5c50;
+    padding: 5px;
+    list-style: none;
+}
+
+.add_destination {
+    background-color: #cd5c5c50;
+    padding: 5px;
+    list-style: none;
+    align-items: stretch;
+    color: #1d3232;
+}
+
+.country {
+    align-items: center;
+    color: #182a2a;
+
+}
+
+/* Cities in Country page */
+body main ul li {
+    list-style: none;
+}
+body main ul li a {
+    text-decoration: none;
+    color: darkslategray;
+}
+body main form input {
+    background-color: darkslategray;
+    color: indianred;
+    padding: 5px;
+    border: 10px;
+    border-color: indianred;
+    border-radius: 15px;
+}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <form action="/country/delete" method="post">
+    <label for="country">DeleteCountry:</label>
+    <select id="country" name="country_id">
+        {% for country in countries %}
+        <option value="{{country.id}}">
+            {{ country.name }}
+        </option>
+        {% endfor %}
+    </select>
+    <p>
+        <input type="submit" value="Remove Country">
+    </p>
+</form>
+</div>
+<div>
+    <form action="/city/delete" method="post">
+    <label for="city">Delete City:</label>
+    <select id="city" name="city_id">
+        {% for city in cities %}
+        <option value="{{city.id}}">
+            {{ city.name }}
+        </option>
+        {% endfor %}
+    </select>
+    <p>
+        <input type="submit" value="Remove City">
+    </p>
+    </form>
+</div>
+    
+{% endblock %}

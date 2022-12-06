@@ -3,11 +3,13 @@
 
 {% block content %}
 
-    <h2>{{ country.name }}</h2>
+    <h2 class="country">{{ country.name }}</h2>
     <ul>
         {% for city in cities_visited %}
         <li>
+            <p>
             <a href="/city/{{ city.id }}">{{ city.name }}</a> 
+        </p>
         </li>
         {% endfor %}
     </ul>
