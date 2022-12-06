@@ -41,9 +41,9 @@
                 <!-- {% block countries_visited %} -->
                 <ul>
                     {% for country in countries_visited %}
-                    <p>
+                    
                     <li>
-                        <a href="/country/{{ country.id }}">{{ country.name }}</a> 
+                        <a class="country_nav" href="/country/{{ country.id }}">{{ country.name }}</a> 
                     </li>
                     </p>
                     {% endfor %}
@@ -55,23 +55,25 @@
             <section id="countries_to_visit">
                 <h3>Countries To Visit</h3>
                 <!-- {% block countries_to_visit %} -->
+                <p>
                 <ul>
                     {% for country in countries_to_visit %}
                     <li>
                         <a>{{ country.name }}</a> 
                     </li>
                     <form action="/country/{{country.id}}/edit" method="post">
-                        <p>
+                        
                             <input type="submit" value="Move to Visited">
-                        </p>
+                       
                     </form>
                     <form action="/country/{{country.id}}/delete" method="post">
-                        <p>
+                        
                             <input type="submit" value="Remove Country">
-                        </p>
+                      
                     </form>
                     {% endfor %}
                 </ul>
+                </p>
                 <!-- {% endblock %} -->
             </section>
         </div>
@@ -86,14 +88,10 @@
                         <a>{{ city.name }}</a> 
                     </li>
                     <form action="/city/{{city.id}}/edit" method="post">
-                        <p>
-                            <input type="submit" value="Move to Visited">
-                        </p>
+                         <input type="submit" value="Move to Visited">
                     </form>
-                    <form action="/city/{{city.id}}/remove" method="post">
-                        <p>
-                            <input type="submit" value="Remove City">
-                        </p>
+                    <form action="/city/{{city.id}}/delete" method="post">
+                        <input type="submit" value="Remove City">
                     </form>
                     {% endfor %}
                 </ul>
@@ -116,7 +114,7 @@
                         <input type="checkbox" id="visited" name="visited">
                     </div>
                     <div>
-                        <button type="add">Add Destination</button>
+                        <button type="add">Add</button>
                     </div>
                 </form>
                 <!-- {% endblock %} -->
@@ -145,7 +143,7 @@
                         <input type="checkbox" id="visited" name="visited">
                     </div>
                     <div>
-                        <button type="add">Add Destination</button>
+                        <button type="add">Add</button>
                     </div>
                     <input type="hidden" value="{{ user.id }}" name="user_id">
                 </form>

@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<section class="delete_destinations">
 <div>
     <form action="/country/delete" method="post">
-    <label for="country">DeleteCountry:</label>
+    <h3><label for="country">Delete Country:</label></h3>
     <select id="country" name="country_id">
         {% for country in countries %}
         <option value="{{country.id}}">
@@ -18,7 +19,7 @@
 </div>
 <div>
     <form action="/city/delete" method="post">
-    <label for="city">Delete City:</label>
+    <h3><label for="city">Delete City:</label></h3> 
     <select id="city" name="city_id">
         {% for city in cities %}
         <option value="{{city.id}}">
@@ -31,5 +32,6 @@
     </p>
     </form>
 </div>
+</section>
     
 {% endblock %}

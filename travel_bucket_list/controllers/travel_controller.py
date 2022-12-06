@@ -101,7 +101,6 @@ def remove_city(city_id):
 @destination_blueprint.route("/city/delete", methods=['POST'])
 def remove_city_to_vist():
     city_id = request.form["city_id"]
-
     city_repository.delete(city_id)
     return redirect('/')
 

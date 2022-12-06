@@ -35,6 +35,15 @@ country8 = Country("Italy", user1, True)
 country_repository.save(country8)
 country9 = Country("Spain", user1, True)
 country_repository.save(country9)
+country10 = Country("Australia", user1, False)
+country_repository.save(country10)
+country11 = Country("New Zealand", user1, False)
+country_repository.save(country11)
+country12 = Country("Iceland", user1, False)
+country_repository.save(country12)
+country13 = Country("Argentina", user1, False)
+country_repository.save(country13)
+
 
 
 country_repository.select_all()
@@ -77,6 +86,8 @@ city18 = City("Florence", country8, user1, True)
 city_repository.save(city18)
 city19 = City("Barcelona", country9, user1, True)
 city_repository.save(city19)
+city20 = City("Nice", country4, user1, True)
+city_repository.save(city20)
 
 
 city_repository.select_all()
