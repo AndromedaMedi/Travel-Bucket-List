@@ -62,17 +62,20 @@
                     <li>
                         <a class="title">{{ country.name }}</a> 
                     </li>
+                    <div>
                     <form action="/country/{{country.id}}/edit" method="post">
                         
                             <input type="submit" value="Move to Visited">
+                            
                        
                     </form>
                     <form action="/country/{{country.id}}/delete" method="post">
                         
                             <!-- <input type="submit" value="Remove Country"> -->
-                            <button><i class="fa fa-solid fa-trash"></i></button>
+                            <button class="delete-country"><i class="fa fa-solid fa-trash"></i></button>
                       
                     </form>
+                    </div>
                     {% endfor %}
                 </ul>
                 </p>
@@ -89,12 +92,17 @@
                     <li>
                         <a>{{ city.name }}</a> 
                     </li>
+                    <div>
                     <form action="/city/{{city.id}}/edit" method="post">
                          <input type="submit" value="Move to Visited">
                     </form>
                     <form action="/city/{{city.id}}/delete" method="post">
-                        <input type="submit" value="Remove City">
+
+                        <!-- <input type="submit" value="Remove City"> -->
+                        <button class="delete-city"><i class="fa fa-solid fa-trash"></i></button>
+
                     </form>
+                    </div>
                     {% endfor %}
                 </ul>
                 <!-- {% endblock %} -->

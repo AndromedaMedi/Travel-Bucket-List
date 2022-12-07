@@ -18,7 +18,7 @@ body {
     justify-content: space-between;
     text-decoration: none;
     width: 100%;
-    /* flex-shrink: 1; */
+    flex-shrink: 1;
     gap: 2px;
 }
 
@@ -36,6 +36,9 @@ header {
     align-items: flex-end;
     font-style: italic;
 }
+header div h3 {
+    color: ivory;
+}
 
 header div h3 {
     color: ivory;
@@ -44,6 +47,7 @@ header div h3 {
 
 h3 {
     color: indianred;
+    font-size: 22px;
 }
 
 
@@ -52,7 +56,8 @@ header nav ul {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-end;
-    font-style: normal
+    font-style: normal;
+    font-size: 20px
 }
 
 nav a {
@@ -85,7 +90,8 @@ body main div section ul li a {
     padding: 5px;
     list-style: none;
     width: 24%;
-    font-size: 18px
+    font-size: 20px;
+    padding-bottom: 20rem;
 }
  
 .country_nav:hover {
@@ -98,9 +104,8 @@ body main div section ul li a {
     list-style: none;
     align-content: center;
     align-items:flex-start;
-    width: 24%;
-    font-size: 18px;
-
+    font-size: 19px;
+    width: 24%
 }
 
 .cities_to_visit {
@@ -108,7 +113,7 @@ body main div section ul li a {
     padding: 5px;
     list-style: none;
     width: 24%;
-    font-size: 18px
+    font-size: 19px;
 }
 
 .add_destination {
@@ -117,8 +122,8 @@ body main div section ul li a {
     list-style: none;
     align-items: stretch;
     color: #1d3232;
-    width: 24%;
-    font-size: 18px
+    font-size: 19px;
+    width: 24%
 }
 
 .country {
@@ -161,7 +166,7 @@ body main h2 {
 
 .city_page {
     padding-bottom: 25rem;
-
+    padding-top: 2rem
 }
 
 .remove_city {
@@ -252,4 +257,16 @@ body main section div input {
     border-color: indianred;
     border-radius: 10px;
     align-items:flex-start
+}
+
+body main div section ul div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.delete-country, .delete-city {
+    background: none;
+    border-color: indianred;
+    border-radius: 10px;
+    color: #2f4f4f99
 }
