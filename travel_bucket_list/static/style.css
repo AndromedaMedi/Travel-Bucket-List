@@ -20,12 +20,13 @@ body {
     width: 100%;
     flex-shrink: 1;
     gap: 2px;
+    height: auto
 }
 
 
-body>footer {
+body footer {
     color: indianred;
-    /* align-self: flex-end; */
+    font-style: italic;
 }
 
 
@@ -67,9 +68,8 @@ nav a {
     list-style-type: none;
 }
 nav a:hover {
-    color: darkslategray;
+    color: ivory;
 }
-
 
 .nav-link {
     list-style: none;
@@ -80,7 +80,7 @@ body > main > div > section > ul > li {
 }
 body main div section ul li a {
     text-decoration: none;
-    color: #182a2a;
+    color: ivory;
 }
 
 
@@ -91,7 +91,7 @@ body main div section ul li a {
     list-style: none;
     width: 24%;
     font-size: 20px;
-    padding-bottom: 20rem;
+    padding-bottom: 15rem;
 }
  
 .country_nav:hover {
@@ -127,11 +127,12 @@ body main div section ul li a {
 }
 
 .country {
-    color: #182a2a;
+    color: indianred;
 }
 .country_page {
     align-items: center;
     padding-bottom: 19rem;
+    padding-top: 2rem;
 }
 
 
@@ -147,7 +148,7 @@ body main ul li a {
     color: indianred
 }
 .city_hover {
-    color: #182a2a;
+    color: ivory;
 }
 
 .remove_country {
@@ -159,14 +160,18 @@ body main ul li a {
     border-radius: 15px;
 }
 
+.remove_country:hover {
+    color: indianred;
+}
+
 /* City in city page */
 body main h2 {
-    color: #182a2a;
+    color: indianred;
 }
 
 .city_page {
-    padding-bottom: 25rem;
-    padding-top: 2rem
+    padding-bottom: 5rem;
+    padding-top: 2rem;
 }
 
 .remove_city {
@@ -176,6 +181,9 @@ body main h2 {
     border: 10px;
     border-color: indianred;
     border-radius: 15px;
+}
+.remove_city:hover {
+    color: indianred;
 }
 
 /* Add  */
@@ -187,7 +195,9 @@ main section form div button {
     border-color: indianred;
     border-radius: 10px;
     align-items: flex-end;
-
+}
+main section form div button:hover {
+    color: indianred;
 }
 
 main section form div input {
@@ -199,7 +209,7 @@ main section form div select {
 }
 
 main section form {
-    color: #182a2a;
+    color: ivory;
 }
 
 main section form div input #visited {
@@ -215,6 +225,9 @@ main div section ul form input {
     border-color: indianred;
     border-radius: 10px;
     align-items:flex-start
+}
+main div section ul form input:hover {
+    color: indianred;
 }
 
 /* main div section ul li a {
@@ -232,7 +245,7 @@ main div section ul form input {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-    padding-bottom: 18rem;
+    padding-bottom: 15rem;
     padding-top: 5rem;
 }
 
@@ -262,11 +275,18 @@ body main section div input {
 body main div section ul div {
     display: flex;
     justify-content: space-around;
+    align-items: flex-end;
 }
 
 .delete-country, .delete-city {
     background: none;
     border-color: indianred;
     border-radius: 10px;
-    color: #2f4f4f99
+    color: #2f4f4f99;
+}
+.delete-country:hover {
+    color: ivory;
+}
+.delete-city:hover {
+    color: ivory;
 }

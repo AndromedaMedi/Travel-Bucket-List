@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Travel Bucket List</title>
+</head>
+<body>
+
+    <header>
+
+        <div class="heading">
+            <h1>{{ user.name }}'s Travel Bucket List</h1>
+            <h3>Where to next...?</h3>
+        </div>
+
+        <div class="head-nav"></div>
+            <nav>
+                <ul>
+                    <li class="nav-link">
+                        <a href="/"><img <link>  Home</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/">Add Destination</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/delete_destination">Delete Destination</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <hr>
+    <main class="destinations">
+
+        <div class="countries_visited">
+            <section id="countries_visited">
+                <h3>Countries Visited</h3>
+                <!-- {% block countries_visited %} -->
+                <ul>
+                    {% for country in countries_visited %}
+                    
+                    <li>
+                        <a class="country_nav" href="/country/{{ country.id }}">{{ country.name }}</a> 
+                    </li>
+                    </p>
+                    {% endfor %}
+                </ul>
+                <!-- {% endblock %} -->
+            </section>
+        </div>  
+        <div class="countries_to_visit">
+            <section id="countries_to_visit">
+                <h3>Countries To Visit</h3>
+                <!-- {% block countries_to_visit %} -->
+                <p>
+                <ul>
+                    {% for country in countries_to_visit %}
+                    <li>
+                        <a class="title">{{ country.name }}</a> 
+                    </li>
+                    <form action="/country/{{country.id}}/edit" method="post">
+                        
+                            <input type="submit" value="Move to Visited">
+                       
+                    </form>
+                    <form action="/country/{{country.id}}/delete" method="post">
+                        
+                            <!-- <input type="submit" value="Remove Country"> -->
+                            <button><i class="fa fa-solid fa-trash"></i></button>
+                      
+                    </form>
+                    {% endfor %}
+                </ul>
+                </p>
+                <!-- {% endblock %} -->
+            </section>
+        </div>
+
+        <div class="cities_to_visit">
+            <section id="cities_to_visit">
+                <h3>Cities To Visit</h3>
+                <!-- {% block cities_to_visit %} -->
+                <ul>
+                    {% for city in cities_to_visit %}
+                    <li>
+                        <a>{{ city.name }}</a> 
+                    </li>
+                    <form action="/city/{{city.id}}/edit" method="post">
+                         <input type="submit" value="Move to Visited">
+                    </form>
+                    <form action="/city/{{city.id}}/delete" method="post">
+                        <input type="submit" value="Remove City">
+                    </form>
+                    {% endfor %}
+                </ul>
+                <!-- {% endblock %} -->
+            </section>
+        </div>
+
+        <div class="add_destination">
+            <section class="add" id="add_country">
+                <h3>Add Country</h3>
+                <!-- {% block add_country %} -->
+                <form action="/add_country" method="POST">
+                    <input type="hidden" value="{{ user.id }}" name="user_id">
+                    <div>
+                        <label for="name">Country Name:</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div>
+                        <label for="visited">Already been?</label>
+                        <input type="checkbox" id="visited" name="visited">
+                    </div>
+                    <div>
+                        <button type="add">Add</button>
+                    </div>
+                </form>
+                <!-- {% endblock %} -->
+            </section>
+
+            <section class="add" id="add_city">
+                <h3>Add City</h3>
+                <!-- {% block add_city %} -->
+                <form action="/add_city" method="POST">
+                    <div>
+                        <label for="name">City Name:</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div>
+                        <label for="country">Country:</label>
+                        <select id="country" name="country_id">
+                            {% for country in countries %}
+                            <option value="{{country.id}}">
+                                {{ country.name }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div>
+                        <label for="visited">Already been?</label>
+                        <input type="checkbox" id="visited" name="visited">
+                    </div>
+                    <div>
+                        <button type="add">Add</button>
+                    </div>
+                    <input type="hidden" value="{{ user.id }}" name="user_id">
+                </form>
+                <!-- {% endblock %} -->
+            </section>
+        </div>
+    </main>
+    <hr>
+    <footer>
+        <h3>Travel Bucket List</h3>
+        <h4>All the destinations you have already visited and want to visit in one place.</h4>
+    </footer>
+
+</body>
+</html>

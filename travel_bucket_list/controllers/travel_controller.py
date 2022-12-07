@@ -35,13 +35,16 @@ def show_country(country_id):
     return render_template("country.html", country = country_visited, cities_visited = cities_visited, user=user)
 
 # SHOW 
-# GET
-# Show city visited
+# GET '/city/<city_id>'
+# SET city_visited = city ID from URL
+# SET user = first user in database
+# return country.html template passing in city_visited and user
 @destination_blueprint.route("/city/<city_id>")
 def show_city(city_id):
     city_visited = city_repository.select(city_id)
     user = user_repository.select_all()[0]
     return render_template("city.html", city = city_visited, user = user)
+
 
 # CREATE
 # POST '/add_country'
@@ -117,4 +120,6 @@ def show_delete_destination():
     countries = country_repository.select_all()
     cities = city_repository.select_all()
     return render_template("delete.html", user=user, countries=countries, cities=cities)
+
+
 

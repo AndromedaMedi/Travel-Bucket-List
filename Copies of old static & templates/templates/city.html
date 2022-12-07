@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="city_page">
+    <h2>{{ city.name }}</h2>
+    <form action="/city/{{city.id}}/delete" method="post">
+        <p>
+            <input class="remove_city" type="submit" value="Remove City">
+        </p>
+    </form>
+</div>
+
+{% endblock %}

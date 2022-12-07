@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="country_page">
+    <h2 class="country">{{ country.name }}</h2>
+    <ul>
+        {% for city in cities_visited %}
+        <li>
+            <p>
+            <a class="city_hover" href="/city/{{ city.id }}">{{ city.name }}</a> 
+        </p>
+        </li>
+        {% endfor %}
+    </ul>
+    <form action="/country/{{country.id}}/delete" method="post">
+        <p>
+            <input class="remove_country" type="submit" value="Remove Country">
+        </p>
+    </form>
+</div>
+
+{% endblock %}

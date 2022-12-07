@@ -1,0 +1,255 @@
+/* html, body {
+    height: 100%;
+} */
+
+body {
+    background: url('/static/images/background6.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 70;
+    list-style-type: none;
+    padding: 10px;
+    margin: 0px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.destinations {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    width: 100%;
+    /* flex-shrink: 1; */
+    gap: 2px;
+}
+
+
+body>footer {
+    color: indianred;
+    align-self: flex-end;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    color:indianred;
+    align-items: flex-end;
+    font-style: italic;
+}
+
+header div h3 {
+    color: ivory;
+}
+
+
+h3 {
+    color: indianred;
+}
+
+
+header nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    font-style: normal
+}
+
+nav a {
+    color: indianred;
+    text-decoration: none;
+    list-style: none;
+    list-style-type: none;
+}
+nav a:hover {
+    color: darkslategray;
+}
+
+
+.nav-link {
+    list-style: none;
+}
+
+body > main > div > section > ul > li {
+    list-style: none;
+}
+body main div section ul li a {
+    text-decoration: none;
+    color: #182a2a;
+}
+
+
+.countries_visited {
+    text-decoration: none;
+    background-color: #2f4f4f60;
+    padding: 5px;
+    list-style: none;
+    width: 24%;
+    font-size: 18px
+}
+ 
+.country_nav:hover {
+    color: indianred
+}
+
+.countries_to_visit {
+    background-color: #2f4f4f60;
+    padding: 5px;
+    list-style: none;
+    align-content: center;
+    align-items:flex-start;
+    width: 24%;
+    font-size: 18px;
+
+}
+
+.cities_to_visit {
+    background-color: #2f4f4f60;
+    padding: 5px;
+    list-style: none;
+    width: 24%;
+    font-size: 18px
+}
+
+.add_destination {
+    background-color: #2f4f4f60;
+    padding: 5px;
+    list-style: none;
+    align-items: stretch;
+    color: #1d3232;
+    width: 24%;
+    font-size: 18px
+}
+
+.country {
+    color: #182a2a;
+}
+.country_page {
+    align-items: center;
+    padding-bottom: 19rem;
+}
+
+
+/* Cities in Country page */
+body main ul li {
+    list-style: none;
+}
+body main ul li a {
+    text-decoration: none;
+    color: darkslategray;
+}
+.city_hover:hover {
+    color: indianred
+}
+.city_hover {
+    color: #182a2a;
+}
+
+.remove_country {
+    background-color: darkslategray;
+    color:ivory;
+    padding: 5px;
+    border: 10px;
+    border-color: indianred;
+    border-radius: 15px;
+}
+
+/* City in city page */
+body main h2 {
+    color: #182a2a;
+}
+
+.city_page {
+    padding-bottom: 25rem;
+
+}
+
+.remove_city {
+    background-color: darkslategray;
+    color:ivory;
+    padding: 5px;
+    border: 10px;
+    border-color: indianred;
+    border-radius: 15px;
+}
+
+/* Add  */
+main section form div button {
+    background-color: #2f4f4f99;
+    color:ivory;
+    padding: 5px;
+    border: 10px;
+    border-color: indianred;
+    border-radius: 10px;
+    align-items: flex-end;
+
+}
+
+main section form div input {
+    background-color: #cd5c5c60;
+}
+
+main section form div select {
+    background-color: #cd5c5c60;
+}
+
+main section form {
+    color: #182a2a;
+}
+
+main section form div input #visited {
+    background-color: #cd5c5c60;
+}
+
+/* Countries in home page */
+main div section ul form input {
+    background-color: #2f4f4f99;
+    color:ivory;
+    padding: 5px;
+    border: 10px;
+    border-color: indianred;
+    border-radius: 10px;
+    align-items:flex-start
+}
+
+/* main div section ul li a {
+    
+} */
+
+.title {
+    align-items: center;
+}
+
+
+/* Delete destination page */
+
+.delete_destinations {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    padding-bottom: 18rem;
+    padding-top: 5rem;
+}
+
+body main section div form {
+    display: flex;
+    flex-direction: column;
+}
+
+body main section div h3 {
+    font-style: bold;
+    color: #1d3232;;
+}
+
+body main section div select {
+    background-color: #cd5c5c60;
+}
+body main section div input {
+    background-color: #2f4f4f99;
+    color:ivory;
+    padding: 5px;
+    border: 10px;
+    border-color: indianred;
+    border-radius: 10px;
+    align-items:flex-start
+}
