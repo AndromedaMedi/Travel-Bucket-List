@@ -116,7 +116,8 @@ city31 = City("Frankfurt", country2, user1, True)
 city_repository.save(city21)
 city32 = City("Madrid", country9, user1, True)
 city_repository.save(city32)
-
+city33 = City("Korfu", country1, user1, True)
+city_repository.save(city33)
 
 
 city_repository.select_all()

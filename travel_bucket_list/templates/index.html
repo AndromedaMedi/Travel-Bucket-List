@@ -21,7 +21,7 @@
             <nav>
                 <ul>
                     <li class="nav-link">
-                        <a href="/"><img <link>  Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li class="nav-link">
                         <a href="/">Add Destination</a>
@@ -39,23 +39,19 @@
         <div class="countries_visited">
             <section id="countries_visited">
                 <h3>Countries Visited</h3>
-                <!-- {% block countries_visited %} -->
                 <ul>
                     {% for country in countries_visited %}
-                    
                     <li>
                         <a class="country_nav" href="/country/{{ country.id }}">{{ country.name }}</a> 
                     </li>
                     </p>
                     {% endfor %}
                 </ul>
-                <!-- {% endblock %} -->
             </section>
         </div>  
         <div class="countries_to_visit">
             <section id="countries_to_visit">
                 <h3>Countries To Visit</h3>
-                <!-- {% block countries_to_visit %} -->
                 <p>
                 <ul>
                     {% for country in countries_to_visit %}
@@ -64,29 +60,21 @@
                     </li>
                     <div>
                     <form action="/country/{{country.id}}/edit" method="post">
-                        
-                            <input type="submit" value="Move to Visited">
-                            
-                       
+                         <input type="submit" value="Move to Visited">
                     </form>
                     <form action="/country/{{country.id}}/delete" method="post">
-                        
-                            <!-- <input type="submit" value="Remove Country"> -->
-                            <button class="delete-country"><i class="fa fa-solid fa-trash"></i></button>
-                      
+                        <button class="delete-country"><i class="fa fa-solid fa-trash"></i></button>
                     </form>
                     </div>
                     {% endfor %}
                 </ul>
                 </p>
-                <!-- {% endblock %} -->
             </section>
         </div>
 
         <div class="cities_to_visit">
             <section id="cities_to_visit">
                 <h3>Cities To Visit</h3>
-                <!-- {% block cities_to_visit %} -->
                 <ul>
                     {% for city in cities_to_visit %}
                     <li>
@@ -97,22 +85,17 @@
                          <input type="submit" value="Move to Visited">
                     </form>
                     <form action="/city/{{city.id}}/delete" method="post">
-
-                        <!-- <input type="submit" value="Remove City"> -->
                         <button class="delete-city"><i class="fa fa-solid fa-trash"></i></button>
-
                     </form>
                     </div>
                     {% endfor %}
                 </ul>
-                <!-- {% endblock %} -->
             </section>
         </div>
 
         <div class="add_destination">
             <section class="add" id="add_country">
                 <h3>Add Country</h3>
-                <!-- {% block add_country %} -->
                 <form action="/add_country" method="POST">
                     <input type="hidden" value="{{ user.id }}" name="user_id">
                     <div>
@@ -127,12 +110,10 @@
                         <button type="add">Add</button>
                     </div>
                 </form>
-                <!-- {% endblock %} -->
             </section>
 
             <section class="add" id="add_city">
                 <h3>Add City</h3>
-                <!-- {% block add_city %} -->
                 <form action="/add_city" method="POST">
                     <div>
                         <label for="name">City Name:</label>
@@ -157,7 +138,6 @@
                     </div>
                     <input type="hidden" value="{{ user.id }}" name="user_id">
                 </form>
-                <!-- {% endblock %} -->
             </section>
         </div>
     </main>
