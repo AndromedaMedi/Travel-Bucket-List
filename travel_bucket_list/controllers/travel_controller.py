@@ -82,7 +82,7 @@ def remove_country(country_id):
 def remove_country_to_visit():
     country_id = request.form["country_id"]
     country_repository.delete(country_id)
-    return redirect('/')
+    return redirect(request.referrer)
 
 @destination_blueprint.route("/country/<country_id>/edit", methods=['POST'])
 def update_country(country_id):
@@ -102,7 +102,7 @@ def remove_city(city_id):
 def remove_city_to_vist():
     city_id = request.form["city_id"]
     city_repository.delete(city_id)
-    return redirect('/')
+    return redirect(request.referrer)
 
 @destination_blueprint.route("/city/<city_id>/edit", methods=['POST'])
 def update_city(city_id):

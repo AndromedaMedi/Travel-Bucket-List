@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Travel Bucket List</title>
 </head>
@@ -61,16 +62,20 @@
                     <li>
                         <a>{{ country.name }}</a> 
                     </li>
+                    <div>
                     <form action="/country/{{country.id}}/edit" method="post">
                         
                             <input type="submit" value="Move to Visited">
+                            
                        
                     </form>
                     <form action="/country/{{country.id}}/delete" method="post">
                         
-                            <input type="submit" value="Remove Country">
+                            <!-- <input type="submit" value="Remove Country"> -->
+                            <button class="delete-country"><i class="fa fa-solid fa-trash"></i></button>
                       
                     </form>
+                    </div>
                     {% endfor %}
                 </ul>
                 </p>
@@ -87,12 +92,17 @@
                     <li>
                         <a>{{ city.name }}</a> 
                     </li>
+                    <div>
                     <form action="/city/{{city.id}}/edit" method="post">
                          <input type="submit" value="Move to Visited">
                     </form>
                     <form action="/city/{{city.id}}/delete" method="post">
-                        <input type="submit" value="Remove City">
+
+                        <!-- <input type="submit" value="Remove City"> -->
+                        <button class="delete-city"><i class="fa fa-solid fa-trash"></i></button>
+
                     </form>
+                    </div>
                     {% endfor %}
                 </ul>
                 <!-- {% endblock %} -->
