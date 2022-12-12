@@ -1,6 +1,6 @@
 import unittest
  
-from tests.travel_test import TestTask
+from tests.travel_test import TestTravel
  
  
 if __name__ == '__main__':
