@@ -1,5 +1,5 @@
-# solo_project
-Travel Bucket List app
+# Travel Bucket List
+Travel Bucket List is a travel tracking app created for the CodeClan Python solo project in week 5 of the Professional Softaware Development course. It allows the user to track the countries and cities they have visited and wish to visit.
 
 
 # terminal
@@ -21,6 +21,7 @@ The app should allow the user to mark destinations as visited or still to see
 Python3/ 
 HTML/ 
 CSS/ 
+PSQL/
 VSCode/ 
 draw.io/ 
 
